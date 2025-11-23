@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home • Campus Connect</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Campus Connect Home">
+        <span class="logo-mark">CC</span><span class="logo-text">Campus Connect</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-controls="navLinks" aria-expanded="false" id="navToggle">☰</button>
+        <ul id="navLinks" class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="network.html">Network</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a href="tutors.html">Tutors</a></li>
+          <li><a href="requests.html">Requests</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="groups.html">Groups</a></li>
+          <li><a href="map.html">Map</a></li>
+          <li><a href="messages.html">Messages <span class="badge" id="msgBadge" aria-live="polite">0</span></a></li>
+          <li><a href="skills.html">Skill Exchange</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="login.html" id="authLink">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+<section class="hero hero-bleed" aria-label="Hero">
+  <div class="hero-copy">
+    <h1>Campus Connect</h1>
+    <p>Find tutors, make friends, discover events, and network across campus.</p>
+    <div class="row">
+      <a class="button" href="register.html">Join Now</a>
+      <a class="button outline" href="discover.html">Explore Network</a>
+    </div>
+  </div>
+</section>
+
+<section class="grid two home-panels">
+  <article class="card">
+    <h2>ABOUT US</h2>
+    <p>
+    Campus Connect is a web app that helps students find academic support, build friendships, 
+    and get more involved on campus. Create a profile with your major, skills, interests, and 
+    availability, then match with tutors, study partners, groups, and events that fit your goals.
+  </p>
+  <br>
+  <p>
+    In one place, you can search tutoring offers and requests, RSVP to events, join groups, 
+    message classmates, and explore a skill-exchange marketplace for languages, music, fitness, 
+    and more. Campus Connect is designed to make campus feel more connected, supportive, and 
+    easier to navigate for every student.
+  </p>
+  </article>
+  <article class="card">
+    <h2>SIGN UP / CREATE PROFILE</h2>
+    <form class="form" id="homeSignup" novalidate>
+      <label>Name<input type="text" name="name" required minlength="2" /></label>
+      <label>Major<input type="text" name="major" required minlength="2" /></label>
+      <label>Classification<input type="text" name="classification" required minlength="2" /></label>
+      <label>Password<input type="password" name="password" required minlength="6" /></label>
+      <button class="button" type="submit">Create Profile</button>
+    </form>
+  </article>
+</section>
+
+<section class="highlight-slider" aria-label="Campus highlights">
+  <div class="highlight-track">
+    <article class="highlight-card">
+      <h2>Find the right tutor in minutes</h2>
+      <p>Filter by subject, schedule, and mode to match with campus tutors who fit your learning style.</p>
+      <a href="tutors.html" class="highlight-cta">Browse tutors<span>→</span></a>
+    </article>
+
+    <article class="highlight-card">
+      <h2>Never miss another event</h2>
+      <p>Discover hackathons, study jams, and social events—then RSVP or join the waitlist in one click.</p>
+      <a href="events.html" class="highlight-cta">See upcoming events<span>→</span></a>
+    </article>
+
+    <article class="highlight-card">
+      <h2>Build your campus network</h2>
+      <p>Join groups, exchange skills, and message classmates to grow your academic and professional circles.</p>
+      <a href="discover.html" class="highlight-cta">Explore the network<span>→</span></a>
+    </article>
+  </div>
+
+  <!-- New arrow buttons -->
+  <button class="highlight-arrow prev" type="button" aria-label="Previous highlight">‹</button>
+  <button class="highlight-arrow next" type="button" aria-label="Next highlight">›</button>
+
+  <div class="highlight-dots" role="tablist">
+    <button class="active" type="button" aria-label="Highlight 1"></button>
+    <button type="button" aria-label="Highlight 2"></button>
+    <button type="button" aria-label="Highlight 3"></button>
+  </div>
+</section>
+
+
+<section class="grid three">
+  <a class="card quick" href="tutors.html"><h2>Browse Tutors</h2><p>Find help by subject, mode, and rate.</p></a>
+  <a class="card quick" href="events.html"><h2>See Events</h2><p>RSVP and join waitlists.</p></a>
+  <a class="card quick" href="map.html"><h2>Campus Map</h2><p>Study spots & event pins.</p></a>
+</section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Campus Connect • Milestone 3 Prototype</p>
+      <p class="footer-links">
+        <a href="guidelines.html">Guidelines</a> ·
+        <a href="about.html">About</a> ·
+        <a href="contact.html">Contact</a>
+        
+      </p>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

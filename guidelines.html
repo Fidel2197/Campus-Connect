@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guidelines • Campus Connect</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Campus Connect Home">
+        <span class="logo-mark">CC</span><span class="logo-text">Campus Connect</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-controls="navLinks" aria-expanded="false" id="navToggle">☰</button>
+        <ul id="navLinks" class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="network.html">Network</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a href="tutors.html">Tutors</a></li>
+          <li><a href="requests.html">Requests</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="groups.html">Groups</a></li>
+          <li><a href="map.html">Map</a></li>
+          <li><a href="messages.html">Messages <span class="badge" id="msgBadge" aria-live="polite">0</span></a></li>
+          <li><a href="skills.html">Skill Exchange</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="login.html" id="authLink">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+  <section class="page-title hero-page hero-guidelines">
+    <h1>Community Guidelines & Reporting</h1>
+    <p>Learn how to participate respectfully and report any issues.</p>
+  </section>
+
+  <section class="grid two guideline-panels">
+    <!-- LEFT: Guidelines -->
+    <article class="card guideline-card">
+      <h2>Key Guidelines</h2>
+      <p class="guideline-intro">
+        Campus Connect is built to help students learn, collaborate, and connect.
+        To keep everyone safe and supported, please follow these core expectations:
+      </p>
+
+      <ul class="guideline-list">
+        <li>
+          <h3>Be respectful & professional</h3>
+          <p class="muted">
+            Use clear, courteous language in messages and posts. Treat classmates,
+            tutors, and organizers the way you’d want to be treated.
+          </p>
+        </li>
+        <li>
+          <br><br>
+          <h3>No spam, harassment, or discrimination</h3>
+          <p class="muted">
+            Do not send repeated unwanted messages, advertise irrelevant services,
+            or target anyone based on identity, background, or beliefs.
+          </p>
+        </li>
+        <li>
+          <br><br>
+          <h3>Be honest about your skills & availability</h3>
+          <p class="muted">
+            Accurately represent your experience, rates, and schedule so other
+            students can rely on the information you share.
+          </p>
+        </li>
+        <li>
+          <br><br>
+          <h3>Keep conversations on-topic & safe</h3>
+          <p class="muted">
+            Use Campus Connect for academic, professional, and campus-related
+            networking. Report anything that feels unsafe, threatening, or
+            clearly outside these goals.
+          </p>
+        </li>
+      </ul>
+    </article>
+
+    <!-- RIGHT: Report form -->
+    <article class="card guideline-card">
+      <h2>Report Content</h2>
+      <p class="guideline-intro">
+        If you see something that breaks these guidelines, you can submit a report
+        below. A moderator or admin will review the details and follow up as needed.
+      </p>
+
+      <form id="reportForm" class="form" novalidate>
+        <label>
+          Link or post ID
+          <input type="text" required />
+        </label>
+        <label>
+          Reason
+          <textarea rows="3" placeholder="Briefly describe what happened..." required></textarea>
+        </label>
+        <label>
+          Screenshot link (optional)
+          <input type="url" placeholder="Share a cloud link if you have one" />
+        </label>
+        <button class="button" type="submit">Submit Report (UI)</button>
+      </form>
+
+      <div class="guideline-after-report">
+        <h3>What happens next?</h3>
+        <ul>
+          <li>We review the report based on these community guidelines.</li>
+          <li>We may contact you through the app if we need more detail.</li>
+          <li>Appropriate action is taken (warning, content removal, or account limits).</li>
+        </ul>
+      </div>
+
+      <div class="guideline-callout">
+        <strong>Immediate safety concern?</strong>
+        <p class="muted">
+          For emergencies or situations where someone may be in danger, contact
+          your campus safety office or local emergency services first, then
+          submit a report here if needed.
+        </p>
+      </div>
+    </article>
+  </section>
+</main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Campus Connect • Milestone 3 Prototype</p>
+      <p class="footer-links">
+        <a href="about.html">About</a> ·
+        <a href="contact.html">Contact</a> 
+      </p>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

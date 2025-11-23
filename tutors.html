@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tutors • Campus Connect</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Campus Connect Home">
+        <span class="logo-mark">CC</span><span class="logo-text">Campus Connect</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-controls="navLinks" aria-expanded="false" id="navToggle">☰</button>
+        <ul id="navLinks" class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="network.html">Network</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a href="tutors.html">Tutors</a></li>
+          <li><a href="requests.html">Requests</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="groups.html">Groups</a></li>
+          <li><a href="map.html">Map</a></li>
+          <li><a href="messages.html">Messages <span class="badge" id="msgBadge" aria-live="polite">0</span></a></li>
+          <li><a href="skills.html">Skill Exchange</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="login.html" id="authLink">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+<section class="page-title hero-page hero-tutors"><h1>Tutor Listings</h1>
+  <p>Browse campus tutors by subject, schedule, and learning style.</p>
+</section>
+<section class="filters card">
+  <div class="row">
+    <label>Subject<input id="fSubject" type="search" placeholder="Calculus, Java, etc." /></label>
+    <label>Mode<select id="fMode"><option value="">Any</option><option>Online</option><option>In-person</option></select></label>
+    <label>Rate (max)<input id="fRate" type="number" min="0" step="1" placeholder="20" /></label>
+    <label>Language<select id="fLang"><option value="">Any</option><option>EN</option><option>ES</option><option>FR</option></select></label>
+    <label>Sort<select id="fSort"><option value="rel">Relevance</option><option value="new">Newest</option><option value="rating">Highest Rated</option></select></label>
+    <button class="button outline" id="applyTutors">Apply (UI)</button>
+  </div>
+</section>
+<section id="matchSuggest" class="card">
+  <h2>Recommended for You</h2>
+  <div id="matchGrid" class="grid cards"></div>
+</section>
+<section class="grid cards" id="tutorGrid" aria-live="polite"></section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Campus Connect • Milestone 3 Prototype</p>
+      <p class="footer-links">
+        <a href="guidelines.html">Guidelines</a> ·
+        <a href="about.html">About</a> ·
+        <a href="contact.html">Contact</a> 
+      </p>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

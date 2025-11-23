@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profile • Campus Connect</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Campus Connect Home">
+        <span class="logo-mark">CC</span><span class="logo-text">Campus Connect</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-controls="navLinks" aria-expanded="false" id="navToggle">☰</button>
+        <ul id="navLinks" class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="network.html">Network</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a href="tutors.html">Tutors</a></li>
+          <li><a href="requests.html">Requests</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="groups.html">Groups</a></li>
+          <li><a href="map.html">Map</a></li>
+          <li><a href="messages.html">Messages <span class="badge" id="msgBadge" aria-live="polite">0</span></a></li>
+          <li><a href="skills.html">Skill Exchange</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="login.html" id="authLink">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+<section class="page-title hero-page hero-profile"><h1>Your Profile</h1>
+  <p>Share your major, skills, and what you’re looking for on campus so other students know how to connect with you.</p>
+</section>
+<section class="grid two home-panels profile-panels">
+
+  <form class="card form" id="profileForm" novalidate>
+    <h2>Edit Profile</h2>
+    <label>Name<input name="name" required /></label>
+    <label>Major/Year<input name="major" placeholder="Computer Science / Junior" required /></label>
+    <label>Minor<input name="minor" placeholder="(optional)" /></label>
+    <label>Bio<textarea name="bio" rows="3" required></textarea></label>
+    <label>Skills/Subjects<input name="skills" placeholder="Data Structures, Calculus, Python" required /></label>
+    <label>Interests<input name="interests" placeholder="AI, Hackathons, Sports" /></label>
+    <label>Availability<input name="availability" placeholder="Mon/Wed Afternoons/Evenings" required /></label>
+    <label>Looking for
+      <select name="looking">
+        <option>Tutor</option><option>Tutor-seeking</option>
+        <option>Study group</option><option>Friends</option>
+        <option>Event organizer</option><option>Networking</option>
+      </select>
+    </label>
+    <label>Profile Photo<input type="file" accept="image/*" /></label>
+    <button class="button" type="submit">Save</button>
+  </form>
+  <div class="card">
+    <h2>Preview</h2>
+    <div id="profilePreview" class="profile-preview"></div>
+  </div>
+</section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Campus Connect • Milestone 3 Prototype (Front‑end only)</p>
+      <p class="footer-links">
+        <a href="guidelines.html">Guidelines</a> ·
+        <a href="about.html">About</a> ·
+        <a href="contact.html">Contact</a> 
+      </p>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

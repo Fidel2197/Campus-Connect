@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Event Detail • Campus Connect</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Campus Connect Home">
+        <span class="logo-mark">CC</span><span class="logo-text">Campus Connect</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-controls="navLinks" aria-expanded="false" id="navToggle">☰</button>
+        <ul id="navLinks" class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="network.html">Network</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a href="tutors.html">Tutors</a></li>
+          <li><a href="requests.html">Requests</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="groups.html">Groups</a></li>
+          <li><a href="map.html">Map</a></li>
+          <li><a href="messages.html">Messages <span class="badge" id="msgBadge" aria-live="polite">0</span></a></li>
+          <li><a href="skills.html">Skill Exchange</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="login.html" id="authLink">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+<article class="card">
+  <h1 id="evTitle">Event</h1>
+  <p class="muted"><span id="evDT"></span> @ <span id="evLoc"></span> • <span id="evTags"></span></p>
+  <p id="evDesc"></p>
+  <div class="row">
+    <button class="button" id="rsvpBtn">RSVP (UI)</button>
+    <button class="button outline" id="waitlistBtn">Join Waitlist (UI)</button>
+  </div>
+</article>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Campus Connect • Milestone 3 Prototype (Front‑end only)</p>
+      <p class="footer-links">
+        <a href="guidelines.html">Guidelines</a> ·
+        <a href="about.html">About</a> ·
+        <a href="contact.html">Contact</a> ·
+        <a href="#" aria-label="Privacy policy">Privacy</a> ·
+        <a href="#" aria-label="Terms of service">Terms</a>
+      </p>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
