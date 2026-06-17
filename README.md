@@ -2,7 +2,7 @@
 
 This submission represents the frontend-only prototype for **Campus Connect**, built for Milestone 3 of the course project. This version includes only **HTML, CSS, and JavaScript**, as required. No backend, database, authentication services, or server logic are included — all functionality is simulated via UI and localStorage placeholders.
 
-The purpose of this milestone is to demonstrate the **Graphical User Interface (GUI)** and user experience for the main features that will be developed fully in the final project (Milestone 4).
+The purpose of this milestone is to demonstrate the **Graphical User Interface (GUI)** and user experience for the main features that will be developed fully in the final project (Milestone 4). The current design uses a simplified top navigation and a grouped student hub so the app feels less crowded while still exposing the deeper tools.
 
 ---
 
@@ -12,6 +12,7 @@ The prototype includes full UI mockups for the following pages:
 ### Core Screens
 - **Home**
 - **Network (Discover)**
+- **Grouped Student Hub for Academic Support, Community, and Tools**
 - **Profile + Preview**
 - **Login / Register / Verify / Forgot Password**
 - **Tutors & Ratings**
@@ -27,7 +28,7 @@ The prototype includes full UI mockups for the following pages:
 - **Contact Page**
 - **About Page**
 
-All pages include full navigation, layout, and visual components.
+All pages include full navigation, layout, visual components, and a custom Campus Connect browser/tab symbol.
 
 ---
 
@@ -36,6 +37,7 @@ All pages include full navigation, layout, and visual components.
 The site uses:
 - Flexbox and CSS Grid
 - A mobile navigation drawer using JavaScript
+- Simplified primary navigation with deeper links grouped on the homepage
 - A `<900px` media query for layout adjustments
 - Fluid buttons, cards, and forms
 ---
@@ -85,7 +87,6 @@ campus_connect/
 │── tutors.html
 │── requests.html
 │── search.html
-│── discover.html
 │── events.html
 │── event.html
 │── event_create.html
@@ -100,5 +101,5 @@ campus_connect/
 │── guidelines.html
 │── styles.css
 │── app.js
+│── assets/
 │── images/
-│── icons/

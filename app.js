@@ -49,6 +49,14 @@ function updateAuthLink(){
 }
 updateAuthLink();
 
+const currentPage = location.pathname.split("/").pop() || "index.html";
+$$(".nav-links a[href]").forEach((link) => {
+  const target = link.getAttribute("href");
+  if (target === currentPage) {
+    link.setAttribute("aria-current", "page");
+  }
+});
+
 // Message badge (simulated)
 function updateMsgBadge(n){
   const el = $("#msgBadge"); if (el) el.textContent = n;
@@ -61,7 +69,16 @@ updateMsgBadge(1);
   form.addEventListener("submit", (e)=>{
     e.preventDefault();
     if (!form.checkValidity()) return alert("Complete all fields.");
-    alert("Profile created (prototype).");
+    const data = new FormData(form);
+    localStorage.setItem("cc_profile", JSON.stringify({
+      name: sanitize(data.get("name")),
+      major: sanitize(data.get("major")),
+      classification: sanitize(data.get("classification")),
+      bio: "New Campus Connect profile",
+      looking: "Tutors, groups, and events",
+    }));
+    alert("Profile created (prototype). Your starter profile is ready.");
+    location.href = "profile.html";
   });
 })();
 
@@ -79,7 +96,7 @@ updateMsgBadge(1);
     setAuth({ email, hash: fakeHash, verified: false });
     updateAuthLink();
     alert("Logged in (prototype). For final, server-side hashing + sessions.");
-    location.href = "discover.html";
+    location.href = "network.html";
   });
 })();
 

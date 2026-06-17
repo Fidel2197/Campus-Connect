@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home • Campus Connect</title>
+  <link rel="icon" type="image/svg+xml" href="assets/campus-connect-symbol.svg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -16,17 +17,12 @@
         <button class="nav-toggle" aria-controls="navLinks" aria-expanded="false" id="navToggle">☰</button>
         <ul id="navLinks" class="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="network.html">Network</a></li>
-          <li><a href="search.html">Search</a></li>
-          <li><a href="tutors.html">Tutors</a></li>
-          <li><a href="requests.html">Requests</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="groups.html">Groups</a></li>
-          <li><a href="map.html">Map</a></li>
-          <li><a href="messages.html">Messages <span class="badge" id="msgBadge" aria-live="polite">0</span></a></li>
-          <li><a href="skills.html">Skill Exchange</a></li>
+          <li><a href="network.html">Discover</a></li>
+          <li><a href="tutors.html">People</a></li>
+          <li><a href="events.html">Community</a></li>
+          <li><a href="messages.html">Inbox <span class="badge" id="msgBadge" aria-live="polite">0</span></a></li>
           <li><a href="profile.html">Profile</a></li>
-          <li><a href="login.html" id="authLink">Login</a></li>
+          <li><a class="nav-auth" href="login.html" id="authLink">Login</a></li>
         </ul>
       </nav>
     </div>
@@ -34,41 +30,57 @@
   <main class="container">
 <section class="hero hero-bleed" aria-label="Hero">
   <div class="hero-copy">
+    <p class="hero-kicker">Campus life, organized</p>
     <h1>Campus Connect</h1>
-    <p>Find tutors, make friends, discover events, and network across campus.</p>
+    <p>Find academic help, meet classmates, join events, and manage campus opportunities from one calmer student workspace.</p>
     <div class="row">
       <a class="button" href="register.html">Join Now</a>
-      <a class="button outline" href="discover.html">Explore Network</a>
+      <a class="button outline" href="network.html">Explore Network</a>
     </div>
   </div>
 </section>
 
-<section class="grid two home-panels">
-  <article class="card">
-    <h2>ABOUT US</h2>
+<section class="campus-command" aria-labelledby="command-title">
+  <div class="command-intro">
+    <p class="section-kicker">Student Hub</p>
+    <h2 id="command-title">What do you need today?</h2>
     <p>
-    Campus Connect is a web app that helps students find academic support, build friendships, 
-    and get more involved on campus. Create a profile with your major, skills, interests, and 
-    availability, then match with tutors, study partners, groups, and events that fit your goals.
-  </p>
-  <br>
-  <p>
-    In one place, you can search tutoring offers and requests, RSVP to events, join groups, 
-    message classmates, and explore a skill-exchange marketplace for languages, music, fitness, 
-    and more. Campus Connect is designed to make campus feel more connected, supportive, and 
-    easier to navigate for every student.
-  </p>
-  </article>
-  <article class="card">
-    <h2>SIGN UP / CREATE PROFILE</h2>
-    <form class="form" id="homeSignup" novalidate>
-      <label>Name<input type="text" name="name" required minlength="2" /></label>
-      <label>Major<input type="text" name="major" required minlength="2" /></label>
-      <label>Classification<input type="text" name="classification" required minlength="2" /></label>
-      <label>Password<input type="password" name="password" required minlength="6" /></label>
-      <button class="button" type="submit">Create Profile</button>
-    </form>
-  </article>
+      The top navigation stays simple. The deeper tools live here so students
+      can choose a path without sorting through a crowded menu.
+    </p>
+  </div>
+  <div class="command-groups">
+    <article class="command-group">
+      <span class="group-mark">A</span>
+      <h3>Academic Support</h3>
+      <p>Find tutors, post help requests, and search by subject or schedule.</p>
+      <div class="command-links">
+        <a href="tutors.html">Tutors</a>
+        <a href="requests.html">Requests</a>
+        <a href="search.html">Search</a>
+      </div>
+    </article>
+    <article class="command-group">
+      <span class="group-mark">C</span>
+      <h3>Campus Community</h3>
+      <p>Discover events, join groups, and message classmates from one place.</p>
+      <div class="command-links">
+        <a href="events.html">Events</a>
+        <a href="groups.html">Groups</a>
+        <a href="messages.html">Messages</a>
+      </div>
+    </article>
+    <article class="command-group">
+      <span class="group-mark">T</span>
+      <h3>Student Tools</h3>
+      <p>Use maps, skill exchange, profile setup, and campus guidelines.</p>
+      <div class="command-links">
+        <a href="map.html">Map</a>
+        <a href="skills.html">Skills</a>
+        <a href="guidelines.html">Guidelines</a>
+      </div>
+    </article>
+  </div>
 </section>
 
 <section class="highlight-slider" aria-label="Campus highlights">
@@ -88,7 +100,7 @@
     <article class="highlight-card">
       <h2>Build your campus network</h2>
       <p>Join groups, exchange skills, and message classmates to grow your academic and professional circles.</p>
-      <a href="discover.html" class="highlight-cta">Explore the network<span>→</span></a>
+      <a href="network.html" class="highlight-cta">Explore the network<span>→</span></a>
     </article>
   </div>
 
@@ -103,11 +115,27 @@
   </div>
 </section>
 
-
-<section class="grid three">
-  <a class="card quick" href="tutors.html"><h2>Browse Tutors</h2><p>Find help by subject, mode, and rate.</p></a>
-  <a class="card quick" href="events.html"><h2>See Events</h2><p>RSVP and join waitlists.</p></a>
-  <a class="card quick" href="map.html"><h2>Campus Map</h2><p>Study spots & event pins.</p></a>
+<section class="grid two home-panels">
+  <article class="card profile-start">
+    <p class="section-kicker">Create Profile</p>
+    <h2>Help Campus Connect match you better.</h2>
+    <form class="form" id="homeSignup" novalidate>
+      <label>Name<input type="text" name="name" required minlength="2" /></label>
+      <label>Major<input type="text" name="major" required minlength="2" /></label>
+      <label>Classification<input type="text" name="classification" required minlength="2" /></label>
+      <label>Password<input type="password" name="password" required minlength="6" /></label>
+      <button class="button" type="submit">Create Profile</button>
+    </form>
+  </article>
+  <article class="card campus-proof">
+    <p class="section-kicker">Why It Works</p>
+    <h2>Built around the real student loop.</h2>
+    <div class="proof-list">
+      <span>Find support before a class gets overwhelming.</span>
+      <span>Join events and groups without hunting through separate pages.</span>
+      <span>Keep messages, map pins, and skill swaps close to your profile.</span>
+    </div>
+  </article>
 </section>
   </main>
   <footer class="site-footer">
