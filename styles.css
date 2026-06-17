@@ -19,7 +19,7 @@ a{color:var(--primary);text-decoration:none}
 .container{width:min(1120px,92%);margin-inline:auto}
 .site-header{position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid var(--border);z-index:10}
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px;color:var(--text)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:0;color:var(--text)}
 .logo-mark{width:42px;height:42px;background:var(--primary) url('assets/campus-connect-symbol.svg') center/86% no-repeat;color:transparent;border-radius:10px;padding:0;display:inline-block;overflow:hidden}
 .logo-text{display:inline-block}
 .nav-links{display:flex;gap:16px;list-style:none;margin:0;padding:0}
@@ -395,7 +395,7 @@ body{
 
 .home-panels .card:first-child h2{
   font-size:0.9rem;
-  letter-spacing:0.18em;
+  letter-spacing:0;
   text-transform:uppercase;
   color:var(--brand);
   margin-bottom:12px;
@@ -411,7 +411,7 @@ body{
 /* Heading: same blue as buttons/links */
 .home-panels .card:first-child h2{
   font-size:0.9rem;
-  letter-spacing:0.18em;
+  letter-spacing:0;
   text-transform:uppercase;
   color:var(--brand);                      /* bright Campus Connect blue */
   margin-bottom:12px;
@@ -433,7 +433,7 @@ body{
 /* Match the ABOUT US heading style */
 .home-panels .card:last-child h2{
   font-size:0.9rem;
-  letter-spacing:0.18em;
+  letter-spacing:0;
   text-transform:uppercase;
   color:var(--brand);                    /* same bright blue */
   margin-bottom:16px;
@@ -484,7 +484,7 @@ body{
 /* Edit Profile heading style */
 .profile-panels .card.form h2{
   font-size:1.1rem;
-  letter-spacing:0.12em;
+  letter-spacing:0;
   text-transform:uppercase;
   margin-bottom:14px;
 }
@@ -1034,7 +1034,7 @@ body{
   color: #ffcf87;
   font-size: 0.8rem;
   font-weight: 900;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 

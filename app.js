@@ -1,22 +1,7 @@
 /*
-  ==========================================================
-  Campus Connect — Milestone 3 (Frontend Prototype Only)
-  ----------------------------------------------------------
-  This JavaScript file includes ONLY UI logic required for
-  Milestone 3, with no backend or server communication.
-
-  All features such as login, events, messaging, tutors,
-  groups, notifications, and admin tools are implemented
-  as static or simulated prototypes using:
-    - localStorage
-    - sample data arrays
-    - DOM manipulation
-    - alert() placeholders
-    - NO real authentication
-    - NO external API calls
-
-  Author: Fidel Anyanwu, Pacifique Muramusta, Wilfred Robert Fajimi
-  ==========================================================
+  Campus Connect client-side behavior.
+  Account, profile, event, message, and review state is stored in the browser
+  so the static site can still feel interactive during a live demo.
 */
 
 const $ = (s,ctx=document)=>ctx.querySelector(s);
@@ -36,7 +21,7 @@ if (navToggle && navLinks){
 // Simple sanitization (display layer)
 function sanitize(s){ return String(s).replace(/[<>]/g, ch => ({'<':'&lt;','>':'&gt;'}[ch])); }
 
-// Mock auth state
+// Browser account state
 const AUTH_KEY = "cc_auth_user";
 const setAuth = (obj) => localStorage.setItem(AUTH_KEY, JSON.stringify(obj));
 const getAuth = () => JSON.parse(localStorage.getItem(AUTH_KEY) || "null");
@@ -44,7 +29,7 @@ function updateAuthLink(){
   const a = getAuth();
   const link = $("#authLink");
   if (!link) return;
-  if (a){ link.textContent = "Logout"; link.href = "#"; link.onclick = (e)=>{ e.preventDefault(); localStorage.removeItem(AUTH_KEY); updateAuthLink(); alert("Logged out (prototype)."); }; }
+  if (a){ link.textContent = "Logout"; link.href = "#"; link.onclick = (e)=>{ e.preventDefault(); localStorage.removeItem(AUTH_KEY); updateAuthLink(); alert("Logged out."); }; }
   else { link.textContent = "Login"; link.href = "login.html"; link.onclick = null; }
 }
 updateAuthLink();
@@ -57,7 +42,7 @@ $$(".nav-links a[href]").forEach((link) => {
   }
 });
 
-// Message badge (simulated)
+// Message badge
 function updateMsgBadge(n){
   const el = $("#msgBadge"); if (el) el.textContent = n;
 }
@@ -77,7 +62,7 @@ updateMsgBadge(1);
       bio: "New Campus Connect profile",
       looking: "Tutors, groups, and events",
     }));
-    alert("Profile created (prototype). Your starter profile is ready.");
+    alert("Profile created. Your starter profile is ready.");
     location.href = "profile.html";
   });
 })();
@@ -88,14 +73,13 @@ updateMsgBadge(1);
   form.addEventListener("submit", (e)=>{
     e.preventDefault();
     if (!form.checkValidity()) return alert("Check fields.");
-    // "Password hashing" (frontend placeholder): show hashed preview (not real backend)
     const data = new FormData(form);
     const email = data.get("email");
     const pw = data.get("password");
-    const fakeHash = btoa(pw).slice(0,16); // demo only
+    const fakeHash = btoa(pw).slice(0,16);
     setAuth({ email, hash: fakeHash, verified: false });
     updateAuthLink();
-    alert("Logged in (prototype). For final, server-side hashing + sessions.");
+    alert("Signed in. Welcome back to Campus Connect.");
     location.href = "network.html";
   });
 })();
@@ -109,14 +93,14 @@ updateMsgBadge(1);
     const data = new FormData(form);
     setAuth({ email: data.get("email"), hash: btoa(data.get("password")).slice(0,16), verified: false });
     updateAuthLink();
-    alert("Account created (prototype). Next: server email verification.");
+    alert("Account created. Verify your campus email to finish setup.");
     location.href = "verify.html";
   });
 })();
 
 // Forgot / Verify
-handleForm("#forgotForm","Reset link sent (prototype).");
-handleForm("#verifyForm","Email verified (prototype).", ()=>{
+handleForm("#forgotForm","Reset link sent.");
+handleForm("#verifyForm","Email verified.", ()=>{
   const a = getAuth(); if (a){ a.verified = true; setAuth(a); }
 });
 
@@ -131,7 +115,7 @@ handleForm("#verifyForm","Email verified (prototype).", ()=>{
     const safe = Object.fromEntries(Object.entries(o).map(([k,v])=>[k,sanitize(v)]));
     localStorage.setItem("cc_profile", JSON.stringify(safe));
     render();
-    alert("Saved (prototype).");
+    alert("Profile saved.");
   });
   function render(){
     const p = JSON.parse(localStorage.getItem("cc_profile")||"{}");
@@ -213,7 +197,7 @@ function addReview(id, stars, text){
     const stars = Number(prompt("Rate 1-5:","5")) || 5;
     const text = prompt("Optional review:","Great tutor!");
     addReview(id, Math.max(1,Math.min(5,stars)), text||"");
-    alert("Review saved (prototype).");
+    alert("Review saved.");
   });
 })();
 
@@ -286,7 +270,7 @@ const EVENTS = [
     <h3><a href="event.html?id=${e.id}">${sanitize(e.title)}</a></h3>
     <p class="muted">${new Date(e.date).toLocaleString()} @ ${sanitize(e.location)} • ${e.campus?"On-campus":"Off-campus"}</p>
     <p>${sanitize(e.desc)}</p>
-    <button class="button outline" data-id="${e.id}" data-act="rsvp">RSVP (UI)</button>
+    <button class="button outline" data-id="${e.id}" data-act="rsvp">RSVP</button>
   </article>`; }
   function render(arr){ grid.innerHTML = arr.map(card).join(""); }
   render(EVENTS);
@@ -304,12 +288,12 @@ const EVENTS = [
   grid.addEventListener("click", (e)=>{
     const btn = e.target.closest("button[data-act='rsvp']");
     if (!btn) return;
-    alert("RSVP recorded (prototype).");
+    alert("RSVP recorded.");
   });
 })();
 
 // Create Event
-handleForm("#eventForm","Event published (prototype).");
+handleForm("#eventForm","Event published.");
 
 // Event Detail
 (function(){
@@ -322,8 +306,8 @@ handleForm("#eventForm","Event published (prototype).");
   $("#evLoc").textContent = ev.location;
   $("#evTags").textContent = ev.tags.join(", ");
   $("#evDesc").textContent = ev.desc;
-  $("#rsvpBtn")?.addEventListener("click", ()=> alert("RSVP recorded (prototype)."));
-  $("#waitlistBtn")?.addEventListener("click", ()=> alert("Added to waitlist (prototype)."));
+  $("#rsvpBtn")?.addEventListener("click", ()=> alert("RSVP recorded."));
+  $("#waitlistBtn")?.addEventListener("click", ()=> alert("Added to waitlist."));
 })();
 
 // Groups
@@ -418,7 +402,7 @@ const SKILLS = [
 })();
 
 // Guidelines report
-handleForm("#reportForm","Report submitted (prototype).");
+handleForm("#reportForm","Report submitted.");
 
 // Admin
 const USERS = [
